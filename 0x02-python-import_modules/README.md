@@ -1,10 +1,10 @@
 Python - import & modules
 
 ---
-###Resources###
+### Resources ###
 
 ---
-###Read or watch###
+### Read or watch ###
 
 ---
 - Modules
@@ -12,16 +12,16 @@ Python - import & modules
 - Pycodestyle – Style Guide for Python Code
 
 ---
-###man or help###
+### man or help ###
 
 ---
 - python3
 
 ----
-###Requirements###
+### Requirements ###
 
 ---
-###General
+### General
 - Allowed editors: vi, vim, emacs
 - All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 - All your files should end with a new line
@@ -32,7 +32,7 @@ Python - import & modules
 - The length of your files will be tested using wc
 
 ---
-###TASKS###
+### TASKS ###
 
 ---
 - [0. Import a simple function from a simple file](0-add.py)
