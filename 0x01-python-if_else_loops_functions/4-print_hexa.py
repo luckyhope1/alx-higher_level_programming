@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for i in range(99):
-    print("{} - 0x{:02X}".format(i, i))
+    print("{0:d} - 0x{:0x}".format(i, i))
