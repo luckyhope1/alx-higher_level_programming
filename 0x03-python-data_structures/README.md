@@ -4,7 +4,7 @@ Python - Data Structures: Lists, Tuples
 ### Resources
 
 ---
-###Read or watch:
+### Read or watch:
 
 - 3.1.3. Lists
 - Data structures (until 5.3. Tuples and Sequences included)
@@ -76,7 +76,9 @@ Python - Data Structures: Lists, Tuples
         </li>
     </ul>
 </details>
+
 ---
 ### God Above All  :smile:
+
 ---
 All of the work in this project was conducted as part of the ALX-SE program's curriculum. ALX Africa is an online full-stack software engineering school that uses project-based peer learning to educate students for careers in the IT industry. Visit this <a href="https://www.alxafrica.com/software-engineering-2022">website</a> for further information.
