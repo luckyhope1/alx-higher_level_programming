@@ -1,28 +1,16 @@
-#include <Python.h>
 #include <stdio.h>
+#include <Python.h>
 
-void print_python_list(PyObject *p)
-{
-	Py_ssize_t size;
-	Py_ssize_t i;
-
-	size = PyList_Size(p);
-
-	printf("[*] Python list info\n");
-	printf("[*] Size of the Python List = %ld\n", size);
-	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
-
-	for (i = 0; i < size; i++)
-	{
-		printf("Element %ld: %s\n", i, Py_TYPE(PyList_GetItem(p, i))->tp_name);
-	}
-}
-
+/**
+ * print_python_bytes - Prints bytes information
+ *
+ * @p: Python Object
+ * Return: no return
+ */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size;
-	Py_ssize_t i;
 	char *str;
+	long int size, k, limit;
 
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
@@ -31,15 +19,53 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 
-	size = PyBytes_Size(p);
-	str = PyBytes_AsString(p);
+	size = ((PyVarObject *)(p))->ob_size;
+	str = ((PyBytesObject *)p)->ob_sval;
+
 	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", str);
 
-	printf("  first %ld bytes:", size + 1 > 10 ? 10 : size + 1);
-	for (i = 0; i < size + 1 && i < 10; i++)
-	{
-		printf(" %02hhx", str[i]);
-	}
+	if (size >= 10)
+		limit = 10;
+	else
+		limit = size + 1;
+
+	printf("  first %ld bytes:", limit);
+
+	for (k = 0; k < limit; k++)
+		if (string[k] >= 0)
+			printf(" %02x", str[k]);
+		else
+			printf(" %02x", 256 + str[k]);
+
 	printf("\n");
+}
+
+/**
+ * print_python_list - Prints list information
+ *
+ * @p: Python Object
+ * Return: no return
+ */
+void print_python_list(PyObject *p)
+{
+	long int size, k;
+	PyListObject *list;
+	PyObject *obj;
+
+	size = ((PyVarObject *)(p))->ob_size;
+	list = (PyListObject *)p;
+
+	printf("[*] Python list info\n");
+	printf("[*] Size of the Python List = %ld\n", size);
+	printf("[*] Allocated = %ld\n", list->allocated);
+
+	for (k = 0; k < size; k++)
+	{
+		obj = ((PyListObject *)p)->ob_item[k];
+		printf("Element %ld: %s\n", k, ((obj)->ob_type)->tp_name);
+		if (PyBytes_Check(obj))
+			print_python_bytes(obj);
+	
+	}
 }
