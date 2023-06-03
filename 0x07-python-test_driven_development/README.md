@@ -52,12 +52,4 @@ Python - Test-driven development
 - [6. Matrix multiplication](100-matrix_mul.py)
 - [7. Lazy matrix multiplication](101-lazy_matrix_mul.py)
 - [8. CPython #3: Python Strings](102-python.c)
-- [test](0-add_integer.txt)
-- [test](2-matrix_divided.txt)
-- [test](3-say_my_name.txt)
-- [test](4-print_square.txt)
-- [test](5-text_indentation.txt)
-- [test](6-max_integer_test.py)
-- [test](100-matrix_mul.txt)
-- [test](101-lazy_matrix_mul.txt)
-
+- [test](0-add_integer.txt, 2-matrix_divided.txt, 3-say_my_name.txt, 4-print_square.txt, 5-text_indentation.txt, 6-max_integer_test.py, 100-matrix_mul.txt, 101-lazy_matrix_mul.txt)
