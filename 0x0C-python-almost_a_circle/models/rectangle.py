@@ -20,8 +20,10 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
+            x (int, optional): The x-coordinate of the rectangle's position.
+            Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle's position.
+            Defaults to 0.
             id (int, optional): The ID of the rectangle. Defaults to None.
         """
         super().__init__(id)
@@ -167,7 +169,8 @@ class Rectangle(Base):
         Returns:
             str: The string representation of the rectangle.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}
+    /{self.height}"
 
     def update(self, *args, **kwargs):
         """
@@ -181,7 +184,8 @@ class Rectangle(Base):
                 - 4th argument should be the x attribute
                 - 5th argument should be the y attribute
             **kwargs: Keyword arguments.
-                - Each key represents an attribute name, and its value is the new value to set.
+                - Each key represents an attribute name, and its value is the
+                new value to set.
 
         Raises:
             ValueError: If the number of arguments is not between 1 and 5.
