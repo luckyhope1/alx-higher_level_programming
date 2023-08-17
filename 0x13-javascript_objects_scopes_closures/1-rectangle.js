@@ -4,8 +4,8 @@
  * Define a class named Rectangle
  */
 class Rectangle {
-	constructor(w, h) {
-		this.width = w;
+  constructor (w, h) {
+    this.width = w;
     this.height = h;
   }
 }
