@@ -15,7 +15,7 @@ if __name__ == "__main__":
              WHERE states.name = %s ORDER BY cities.id ASC"
     cursor.execute(query, (sys.argv[4],))
     cities = cursor.fetchall()
-    for city in cities:
-        print(city)
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
     cursor.close()
     db.close()
